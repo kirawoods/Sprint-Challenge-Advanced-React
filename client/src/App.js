@@ -7,7 +7,9 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Women's World Cup Most Searched Players</h1>
-        <PlayerCard />
+        <div className="card-container">
+          <PlayerCard />
+        </div>
       </div>
     );
   }
