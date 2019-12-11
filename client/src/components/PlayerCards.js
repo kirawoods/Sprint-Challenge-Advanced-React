@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import "./PlayerCard.css";
+import "./PlayerCards.css";
 
-export class PlayerCard extends Component {
+export class PlayerCards extends Component {
   render() {
     return (
       <div className="player-card">
