@@ -21,9 +21,11 @@ export class PlayerCards extends Component {
       console.log(this.state.playerInfo);
       return this.state.playerInfo.map(player => (
         <div className="player-card" key={player.id}>
-          <h2>{player.name}</h2>
-          <p>{player.country}</p>
-          <p>{player.searches}</p>
+          <h2 className="player-name">{player.name}</h2>
+          <div className="player-info">
+            <p>Country: {player.country}</p>
+            <p>Searches: {player.searches}</p>
+          </div>
         </div>
       ));
     }
