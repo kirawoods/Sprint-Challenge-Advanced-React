@@ -19,13 +19,13 @@ export class PlayerCards extends Component {
       return <p>Loading...</p>;
     } else {
       console.log(this.state.playerInfo);
-      return (
-        <div className="player-card">
-          <h2>{this.state.playerInfo[0].name}</h2>
-          <p>{this.state.playerInfo[0].country}</p>
-          <p>{this.state.playerInfo[0].searches}</p>
+      return this.state.playerInfo.map(player => (
+        <div className="player-card" key={player.id}>
+          <h2>{player.name}</h2>
+          <p>{player.country}</p>
+          <p>{player.searches}</p>
         </div>
-      );
+      ));
     }
   }
 }
