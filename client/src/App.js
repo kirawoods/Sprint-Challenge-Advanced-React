@@ -25,7 +25,7 @@ function App() {
       <>
         <GlobalStyle />
         <div className="App">
-          <h1>Women's World Cup Most Searched Players</h1>
+          <h1>Womens World Cup Most Searched Players</h1>
           <button
             onClick={e =>
               setTheme(
