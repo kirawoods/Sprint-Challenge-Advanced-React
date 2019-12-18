@@ -1,5 +1,6 @@
-import React, { Component, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./App.css";
+import { storage } from "local-storage-fallback";
 import { PlayerCards } from "./components/PlayerCards";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 
@@ -9,8 +10,16 @@ body {
   color: ${props => (props.theme.mode === "dark" ? "#EEE" : "#111")};
 }`;
 
+function getInitialTheme() {
+  const savedTheme = storage.getItem("theme");
+  return savedTheme ? JSON.parse(savedTheme) : { mode: "light" };
+}
+
 function App() {
-  const [theme, setTheme] = useState({ mode: "dark" });
+  const [theme, setTheme] = useState(getInitialTheme);
+  useEffect(() => {
+    storage.setItem("theme", JSON.stringify(theme));
+  }, [theme]);
   return (
     <ThemeProvider theme={theme}>
       <>
