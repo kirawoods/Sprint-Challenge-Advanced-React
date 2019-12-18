@@ -8,6 +8,17 @@ const GlobalStyle = createGlobalStyle`
 body {
   background-color: ${props => (props.theme.mode === "dark" ? "#111" : "#EEE")};
   color: ${props => (props.theme.mode === "dark" ? "#EEE" : "#111")};
+  
+}
+
+.player-card {
+   border: ${props =>
+     props.theme.mode === "dark" ? "2px solid #EEE" : "2px solid #111"};
+}
+
+.player-info {
+   border: ${props =>
+     props.theme.mode === "dark" ? "2px solid #EEE" : "2px solid #111"};
 }`;
 
 function getInitialTheme() {

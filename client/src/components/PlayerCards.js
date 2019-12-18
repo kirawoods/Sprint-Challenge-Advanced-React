@@ -18,7 +18,6 @@ export class PlayerCards extends Component {
     if (this.state.playerInfo.length === 0) {
       return <p>Loading...</p>;
     } else {
-      console.log(this.state.playerInfo);
       return this.state.playerInfo.map(player => (
         <div className="player-card" key={player.id}>
           <h2 className="player-name">{player.name}</h2>
